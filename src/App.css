@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -34,6 +35,26 @@
 .active{
     background-color: #42855b;
     color: #ffffff!important;
+}
+
+/* Header Styling */
+.headerStyle{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 3rem;
+    justify-items: end;
+    align-items: center;
+}
+.headingSize{
+    font-size:5.3vw;
+    font-size-adjust:auto;
+}
+.hightlightColor{
+    color: #42855b;;
+}
+.paragraphText{
+    font-size: 1.1rem;
+    color: #5e5e5e;
 }
 .error-position{
     position: absolute;
@@ -102,16 +123,18 @@ section{
        grid-template-columns: auto auto;
     
     }
+    .footer{
+        grid-template-columns: auto auto;
+     
+     }
 }
 @media screen and (min-width: 900px){
     section{
        grid-template-columns: auto auto auto;
     
     }
-}
-@media screen and (min-width: 600px){
-    .footer{
-       grid-template-columns: auto auto;
-    
+    .headerStyle{
+        /* grid-template-columns: auto auto; */
+        grid-template-columns: 50ch auto;
     }
 }
