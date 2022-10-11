@@ -47,7 +47,7 @@
 }
 .headingSize{
     font-size:5.3vw;
-    font-size-adjust:auto;
+    font-weight: 200;
 }
 .hightlightColor{
     color: #42855b;;
@@ -92,7 +92,10 @@ section{
 .cardFooter:hover{
     color: #0e1611;
 }
-
+.cardBottom{
+    display: flex;
+    justify-content: space-between;
+}
 /* Single Blog */
 .single-blog{
     margin: 5rem;

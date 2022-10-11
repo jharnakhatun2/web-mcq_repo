@@ -7,12 +7,21 @@ import Blogs from './Pages/Blogs';
 import Error from './Pages/Error';
 import Blog from './Pages/Blog';
 import Statistics from './Pages/Statistics';
+import Quizs from './Pages/Quizs';
+
 
 
 function App() {
   const router = createBrowserRouter([
       {path:'/', element: <Main/>, children:[
-        {path:'/home', element:<Home/>},
+        {
+          path:'/home',
+          loader: async ()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
+          element:<Home/>
+        },
+        {path:'/quiz/:id',element:<Quizs/>},
         {path:'/statistics', element:<Statistics/>},
         {path:'/blogs', element:<Blogs/>},
         {path:'/blogs/:title', element:<Blog/>},
