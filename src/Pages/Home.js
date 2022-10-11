@@ -30,8 +30,8 @@ const Home = () => {
                                 <img className="img-fluid" src={logo} alt="" />
                             </div>
                             <div className="cardBottom">
-                                <Link to={id} className="cardFooter">{name}</Link>
-                                <button className="cardFooter"><Link to={name}>Start Practice</Link></button>
+                                <Link to={name} className="cardFooter">{name}</Link>
+                                <button className="cardFooter"><Link to={`/quiz/${id}`}>Start Practice</Link></button>
                             </div>
                         </article>
                     })
