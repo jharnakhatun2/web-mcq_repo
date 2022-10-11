@@ -8,11 +8,13 @@ import Error from './Pages/Error';
 import Blog from './Pages/Blog';
 import Statistics from './Pages/Statistics';
 import Quizs from './Pages/Quizs';
+import Topics from './Pages/Topics';
 
 
 
 function App() {
   const router = createBrowserRouter([
+      
       {path:'/', element: <Main/>, children:[
         {
           path:'/home',
@@ -22,21 +24,36 @@ function App() {
           element:<Home/>
         },
         {
-        path:'/quiz/:id', 
+        path:'/topics/:id', 
         loader: async ({params})=>{
           return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
         },
-        element:<Quizs/>},
+        element:<Topics/>
+        },
+        {
+          path:'/quiz/:id', 
+          loader: async ({params})=>{
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+          },
+          element:<Quizs/>
+        },
+
         {path:'/statistics', element:<Statistics/>},
         {path:'/blogs', element:<Blogs/>},
         {path:'/blogs/:title', element:<Blog/>},
+        {path:'*', element:<Error/>},
+        
       ]},
-      {path:'*', element:<Error/>},
   ]);
   return (
     <div>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}>
+
+      </RouterProvider>
       <Footer/>
+
+
+      
     </div>
   );
 }

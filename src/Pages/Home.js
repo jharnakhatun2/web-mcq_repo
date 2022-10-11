@@ -10,6 +10,7 @@ import img from './background.png';
 const Home = () => {
 
     const quizData = useLoaderData();
+    console.log(quizData);
 
     return (
         <div>
@@ -30,7 +31,7 @@ const Home = () => {
                                 <img className="img-fluid" src={logo} alt="" />
                             </div>
                             <div className="cardBottom">
-                                <Link to={name} className="cardFooter">{name}</Link>
+                                <Link to={`/topics/${id}`} className="cardFooter">{name}</Link>
                                 <button className="cardFooter"><Link to={`/quiz/${id}`}>Start Practice</Link></button>
                             </div>
                         </article>
