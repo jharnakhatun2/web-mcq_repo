@@ -17,7 +17,7 @@ function App() {
       
       {path:'/', element: <Main/>, children:[
         {
-          path:'/home',
+          path:'/',
           loader: async ()=>{
             return fetch('https://openapi.programming-hero.com/api/quiz')
           },
@@ -47,13 +47,8 @@ function App() {
   ]);
   return (
     <div>
-      <RouterProvider router={router}>
-
-      </RouterProvider>
-      <Footer/>
-
-
-      
+      <RouterProvider router={router}></RouterProvider>
+      <Footer/>      
     </div>
   );
 }

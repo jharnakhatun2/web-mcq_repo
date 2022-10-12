@@ -13,7 +13,7 @@ const Topics = () => {
             {
                 questions.map((question)=>{
                     return <div key={question.id}>
-                        <ul><li>{question.question.slice(3, 100)}</li></ul>
+                        <ul><li>{question.question.slice(3, -4)}</li></ul>
                     </div>
                 })
             }

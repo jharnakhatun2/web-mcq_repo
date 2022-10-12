@@ -125,6 +125,20 @@ section{
     text-align: justify;
 }
 
+/* Quiz Container Design */
+.quiz-container{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 3rem;
+}
+.quiz-head{
+    margin-bottom: -2rem;
+}
+.radio-option{
+    display: grid;
+    grid-gap: 1rem;
+}
+
 /*Footer Design*/
 .footer{
     display: grid;
@@ -162,5 +176,11 @@ section{
     .headerStyle{
         grid-template-columns: auto auto;
         margin: 6rem;
+    }
+    .quiz-container{
+        grid-template-columns: auto auto;
+    }
+    .radio-option{
+        grid-template-columns: auto auto;
     }
 }
