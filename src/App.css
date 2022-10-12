@@ -1,9 +1,9 @@
 
 *{
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
+
 #root{
     background-color: #f7f5f2;
 }
@@ -42,26 +42,57 @@
     display: grid;
     grid-gap: 1rem;
     margin: 3rem;
-    justify-items: end;
+    justify-items: center;
     align-items: center;
+    
 }
-.headingSize{
-    font-size:5.3vw;
-    font-weight: 200;
+.search{
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    box-shadow: inset 0px 0px 8px #0f5132;
+    background: transparent;
+    border-radius: 5px;
+    
 }
-.hightlightColor{
-    color: #42855b;;
+.topicHeader{
+    font-family: serif;
+    margin-bottom: 1rem;
 }
-.paragraphText{
-    font-size: 1.1rem;
-    color: #5e5e5e;
+.search-topics{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 5px;
 }
+.profile-img{
+    max-width: 35%;
+}
+.profile{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .error-position{
     position: absolute;
     top: 50%;
     left: 40%;
 }
 
+/* Section design */
+.section-header{
+    font-family: auto;
+    margin-left: 3rem;
+    margin-bottom: -2rem;
+}
+section{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 3rem;
+}
 
 /* Card Design */
 .card-style{
@@ -80,22 +111,14 @@
     margin-bottom: 5px;
     color: #444941;
 }
-section{
-    display: grid;
-    grid-gap: 1rem;
-    margin: 3rem;
-}
 .cardFooter{
-    color: #42855b;
+    color: #0e1611;
     font-weight: 600;
 }
 .cardFooter:hover{
-    color: #0e1611;
+    color:#42855b ;
 }
-.cardBottom{
-    display: flex;
-    justify-content: space-between;
-}
+
 /* Single Blog */
 .single-blog{
     margin: 5rem;
@@ -133,11 +156,11 @@ section{
 }
 @media screen and (min-width: 900px){
     section{
-       grid-template-columns: auto auto auto;
+       grid-template-columns: auto auto auto auto;
     
     }
     .headerStyle{
-        /* grid-template-columns: auto auto; */
-        grid-template-columns: 50ch auto;
+        grid-template-columns: auto auto;
+        margin: 6rem;
     }
 }
