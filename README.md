@@ -8,8 +8,8 @@ React js application is easy to use for it's reusable UI components. I like it v
 To make this project I faced some brain strooming challenges to myself and enjoyed it happly. Challenges always attracted to Me!  
 
 ## 🔗 Live Site Link: 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
-Preview Live : https://openapi.programming-hero.com/api/quiz/${id}
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://web-qzy-mcq.netlify.app/)
+Preview Live : https://web-qzy-mcq.netlify.app
 
 
 ## What I have been completed -
