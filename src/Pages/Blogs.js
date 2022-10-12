@@ -17,16 +17,19 @@ const Blogs = () => {
     // }
 
     return (
-        <div className='Blogs'>
+        <div className='Blogs m-4 p-1'>
             
             <section>
                 {
                     blogs.map((blog)=>{
                         const{id,title,desc} = blog
-                        return <article className="card-style" key={id}>
-                        <h4 className="cardTitle">{title}</h4>
+                        return <article className="card shadow border-0 p-3" key={id}>
+                        <div className="card-body mt-">
+                        <h4>{title}</h4>
                         <p className="cardDesc">{desc.length < 400 ? desc : desc.slice(0, 400)}</p>
-						<Link to={title} state={{id,title,desc}} className="cardFooter">Learn More...</Link>
+                        <Link to={title} state={{id,title,desc}} className="cardFooter">Learn More...</Link>
+                        </div>
+						
                         </article>
                     })
                 }

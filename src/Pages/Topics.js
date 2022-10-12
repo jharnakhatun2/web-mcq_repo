@@ -7,13 +7,13 @@ const Topics = () => {
     console.log(totalQuestions);
     const {total, id, name, questions} = totalQuestions.data;
     return (
-        <div key = {id}>
-            <h2>Name : {name}</h2>
-            <h3>Totoal Question : {total}</h3>
+        <div className="m-5 p-4" key = {id}>
+            <h3> Topics Name : <span className="text-success">{name}</span></h3>
+            <h4 className="mb-4">Total Question : <span className="text-success">{total}</span></h4>
             {
                 questions.map((question)=>{
                     return <div key={question.id}>
-                        <h3>{question.question}</h3>
+                        <ul><li>{question.question.slice(3, 100)}</li></ul>
                     </div>
                 })
             }

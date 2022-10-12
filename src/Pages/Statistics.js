@@ -98,7 +98,7 @@ const Statistics = () => {
         }
         fetchData ();
     },[]);
-    return (<div style={{width:'85%', height:'50%'}}>
+    return (<div className="p-5 mx-auto" style={{width:'85%', height:'50%'}}>
     <Bar data={data} options={options}/>
     </div>
     );
