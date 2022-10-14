@@ -157,6 +157,15 @@ section{
     font-size: 20px;
 }
 
+/* Toastify Styling */
+.blackBackground {
+    background: rgb(14, 14, 15);
+    color: #fff;
+    font-size: 20px;
+    width: 34vw;
+    padding: 30px 20px;
+}
+
 /* responsive section */
 @media screen and (min-width: 600px){
     section{

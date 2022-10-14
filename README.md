@@ -1,5 +1,5 @@
 
-# Project Title :  WEB QZY MCQ
+# PROJECT TITLE :  WEB QZY MCQ
 
 " WEB QZY MCQ " is my 9th Assignment Project. To make this project, I used only React js application. It is a Quiz related Apps. 
 
@@ -8,7 +8,6 @@ React js application is easy to use for it's reusable UI components. I like it v
 To make this project I faced some brain strooming challenges to myself and enjoyed it happly. Challenges always attracted to Me!  
 
 ## 🔗 Live Site Link: 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://web-qzy-mcq.netlify.app/)
 Preview Live : https://web-qzy-mcq.netlify.app
 
 

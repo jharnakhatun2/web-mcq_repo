@@ -1,66 +1,92 @@
-import { FaAngellist } from "react-icons/fa";
-import { BiHide, BiShow, IconName } from "react-icons/bi";
-import React from 'react';
+import { FaList } from "react-icons/fa";
+import { BiShow } from "react-icons/bi";
 import { useLoaderData } from 'react-router-dom';
-import img from '../Pages/profile.png';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import M from 'materialize-css';
+import { toast, ToastContainer } from "react-toastify";
+import '../App.css';
+
 
 
 
 const Quizs = () => {
     const topicDetails = useLoaderData();
-    const { total, id, name, logo, questions } = topicDetails.data;
-    console.log(topicDetails.data);
+    const { total, id, name, questions } = topicDetails.data;
 
+    // toast function for answer
+    const correctAnswerMessage = () => {
+        toast.success('Your Answer is Correct !', {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: 'toast-message'
+        });
+    }
+    const wrongAnswerMessage = () => {
+        toast.error('Your Answer is incorrect !', {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: 'blackBackground',
+        });
+    }
+    const correctAnswerShow = (correctAnswer) => {
+        toast.success(<h5>{correctAnswer}</h5>, {
+            position: toast.POSITION.BOTTOM_LEFT
+        });
+    }
+
+    // event handler functions
+    const handleAnswer = (option, corrAns) => {
+        if (option === corrAns) {
+            correctAnswerMessage();
+        }
+        else {
+            wrongAnswerMessage();
+        }
+    }
+
+    // event handler functions show ans
+    const handleShowAnswer = (correctAnswer) => {
+            correctAnswerShow(correctAnswer);
+
+    }
+    
     return (
         <div className="quiz-container">
             {/* Quiz Container */}
             <div className="quiz-counter">
-                <h2 className="topicHeader text-center">Quiz of - <span className="text-success text-bold">{name}</span></h2>
                 <div className="quiz-head d-flex justify-content-around align-items-center mt-5">
-                        <h4 className="topicHeader"><FaAngellist /> <span className="text-success fs-2">{total}</span>  questions</h4>
-                    <div className="show-button">
-                        <button className="btn btn-success"><BiShow /> Show Answer</button>
-                        <button className="btn btn-success"><BiHide /> Hide Answer</button>
-                    </div>
+                    <h2 className="topicHeader text-center">Quiz of - <span className="text-success text-bold">{name}</span></h2>
+                    <h4 className="topicHeader"><FaList /> <span className="text-success fs-2">{total}</span>  questions</h4>
                 </div>
-                {
-                    questions.map((questionn) => {
-                        const {options,id,question,correctAnswer} = questionn;
-                        
-                        // Toastify options
-                        const notify = () => toast.success("Wow so easy!",{position:'bottom-center'});
+                <hr />
+                <div className="m-5">
+                    {
+                        questions.map((questionn) => {
+                            const { id, question, options, correctAnswer } = questionn;
+                            return <div key={id} className='m-4'>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <h5>Q . {question.slice(3, -4)}</h5><button className="btn btn-secondary" onClick={()=>handleShowAnswer(correctAnswer)}><BiShow /></button>
 
-                        const validation = (value)=>{
-                            console.log(value); 
-                                                      
-                        }
-                        const handleAnswer = (e)=>{
-                            M.toast({
-                                html:'Option Clicked'
-                            }); 
-                        }
+                                    
+                                    </div>
+                                <form>
+                                    {
+                                        options.map((option) => {
+                                            return <div>
+                                                <label>
+                                                    <input type='radio' name='option' value={option}
+                                                        onClick={() => handleAnswer(option, correctAnswer)}
+                                                    /> {option}</label>
+                                                    
+                                            </div>
 
-                        return <div className="bg-white p-3 m-5 shadow" key={id}>
-                            <h5 className="topicHeader">Q : {question.slice(3, -4)}</h5>
-                            <div className="radio-option m-3">
-                            {
-                                options.map(option =><button className=" w-100 mx-auto m-1 rounded p-4  border-0"onClick={()=> validation(option)}><input onClick={handleAnswer} type="radio" /> {option}</button>)       
-                            }  
-                            
+                                        })
+                                    }
+                                </form>
+                                    
                             </div>
-                            <ToastContainer/>
-                        </div>
-                    })
-                }
-            </div>
-            {/* Contester Dashboard */}
-            <div className="profile-bar text-center bg-white py-4 shadow">
-                <img className='img-fluid w-50 ' src={img} alt="" />
-                <h5 className="topicHeader">Name : Contester</h5>
-                <h3 className="topicHeader my-5">Your result : <span className="text-success">100</span></h3>
+                        })
+                    }
+                    <ToastContainer toastStyle={{ backgroundColor: "#000000", color: "#fff" }} />
+                </div>
+
             </div>
         </div>
     );

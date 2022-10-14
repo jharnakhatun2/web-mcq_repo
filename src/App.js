@@ -45,9 +45,10 @@ function App() {
         
       ]},
   ]);
+   
   return (
     <div>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} ></RouterProvider>
       <Footer/>      
     </div>
   );
